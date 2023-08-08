@@ -1,0 +1,9 @@
+# Hook up signal pins connecting
+# Led pin
+
+net arc_ok			=> signals.led-arc-ok
+net torch-up		=> signals.led-move-up
+net torch-down		=> signals.led-move-down
+net Torch			=> signals.led-torch-on
+      
+

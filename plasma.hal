@@ -1,0 +1,6 @@
+# for simulation mode we connect them directly
+
+net torch-btn		=> plasma.hal-btn-torch	=> or2.0.in0
+net Hood			=> parport.1.pin-07-out	=>	plasma.hal-btn-hood		=>	signals.led-hood-switch
+net TubeCutMove		=> plasma.TubeCutMove TubeWAIT.tube
+

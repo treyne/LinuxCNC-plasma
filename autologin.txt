@@ -1,0 +1,4 @@
+sudo geany /etc/lightdm/lightdm.conf
+
+autologin-user=rusagro
+autologin-user-timeout=0

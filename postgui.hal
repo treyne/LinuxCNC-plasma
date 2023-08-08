@@ -1,0 +1,7 @@
+# Include your custom_postgui HAL commands here
+# This file will not be overwritten when you run stepconf again
+
+net setTube X-axis-auto-scale.in => parport.0.pin-15-in
+net setTube => parport.0.pin-14-out 
+#net HoodSelect => parport.0.pin-15-in-not
+#net HoodSelect => parport.0.pin-14-out
