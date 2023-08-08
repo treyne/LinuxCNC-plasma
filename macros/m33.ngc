@@ -1,0 +1,21 @@
+o<m33> sub
+M64 P01
+G10 L2 P1 Z0 
+G38.2 z-100 f200
+G10 L20 P1 z-5.1
+G10 L2 P1
+o100 call
+o<m33> endsub
+
+o100 sub
+ G10 L2 P1
+	g00z2
+	M3
+	G04P0.07
+	M64 P00
+	G04 P0.05
+	M65 P00
+	M65 P01
+o100 endsub
+
+M2
