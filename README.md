@@ -4,4 +4,5 @@
 для установки выполните:
 
 sudo chmod +x install.sh
+
 sudo ./install.sh
