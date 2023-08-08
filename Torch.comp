@@ -1,0 +1,56 @@
+component Torch			   " Компонент который следит за состоянием дуги";
+		
+
+pin in bit PrgRUN;				// Сигнал программа в работе
+pin in bit Torch;				// Torch on/off
+pin in bit ArcOK;				// Состояние дуги
+
+				
+pin out bit PrgSTOP = false;	// бит для остановки программы
+
+
+variable int ArcOKTimeINT = 0;		// Счетчик циклов задержки на чтение сигнала ArcOK
+param rw float ArcOKTime = 1000;		// Величина задержки после изчезновения ArcOK
+
+
+variable int PrgSTOPdelayINT = 0;	// Счетчик циклов задержки после остановки программы
+param rw float PrgSTOPdelay = 250;	// Величина задержки после остановки программы
+
+variable int run_level = 0;			// этапы работы 
+
+
+	
+
+option singleton yes;				   // только один экземпляр компонента может быть запущен
+function _;  							//function _ fp;
+author "treyne";
+license "GPL";
+;;
+
+
+
+FUNCTION(_)
+{
+	
+
+switch (run_level)
+	{
+	 case 0:  // 
+		   if (Torch && !ArcOK && PrgRUN){ if(ArcOKTimeINT < ArcOKTime)  { ArcOKTimeINT++; break;}
+						if (Torch && !ArcOK && PrgRUN) {PrgSTOP = true; rtapi_print_msg(RTAPI_MSG_ERR, "Torch went shutdown!");run_level = 1;break;}
+			   break;
+			   }
+		   
+		   
+	 case 1:  // 
+		   if(PrgSTOPdelayINT < PrgSTOPdelay)  { PrgSTOPdelayINT++; break;}
+		   PrgSTOP = false;
+		   ArcOKTimeINT = 0;
+		   PrgSTOPdelayINT = 0;
+		   run_level = 0;
+		   break;
+		   }
+		  
+		   
+		   
+}

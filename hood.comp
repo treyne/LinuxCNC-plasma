@@ -1,0 +1,48 @@
+component hood			   " ";
+// основные сигналы управления
+pin in float Xcmd;			// позиция оси X
+pin in float Ycmd;			// позиция оси Y
+
+pin in float Xmax;			// Максимальный ход по X
+pin in float Ymax;			// Максимальный ход по Y
+
+pin out float Xsection_size=0;			
+pin out float Ysection_size=0;			
+
+pin in bit PrgON;			// Program RUN
+				
+			
+pin out bit out1 = false;					// Соленоид №1 etc.
+pin out bit out2 = false;
+pin out bit out3 = false;
+pin out bit out4 = false;
+pin out bit out5 = false;
+pin out bit out6 = false;
+
+//param rw float Xmax = 3000;	
+//param rw float Ymax = 2000;
+	
+
+option singleton yes;				   // только один экземпляр компонента может быть запущен
+function _;  							//function _ fp;
+author "treyne";
+license "GPL";
+;;
+
+
+
+FUNCTION(_)
+{
+	
+Xsection_size = Xmax / 3;	
+Ysection_size = Ymax / 2;
+if (PrgON){
+if (Xcmd >= 0 && Xcmd < Xsection_size && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=true;out2=false;out3=false;out4=false;out5=false;out6=false;}else{out1=false;}
+if (Xcmd >= Xsection_size && Xcmd < Xsection_size*2 && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=false;out2=true;out3=false;out4=false;out5=false;out6=false;}else{out2=false;}
+if (Xcmd > Xsection_size*2 && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=false;out2=false;out3=true;out4=false;out5=false;out6=false;}else{out3=false;}
+if (Xcmd >= 0 && Xcmd < Xsection_size && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=true;out5=false;out6=false;}else{out4=false;}
+if (Xcmd >= Xsection_size && Xcmd < Xsection_size*2 && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=true;out6=false;}else{out5=false;}
+if (Xcmd > Xsection_size*2 && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=false;out6=true;}else{out6=false;}
+} else {out1=false;out2=false;out3=false;out4=false;out5=false;out6=false;}
+
+}

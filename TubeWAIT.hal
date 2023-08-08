@@ -1,0 +1,5 @@
+
+net PrgRUN		=>	TubeWAIT.prog-run
+net MachineON	=>	TubeWAIT.machine-status
+
+

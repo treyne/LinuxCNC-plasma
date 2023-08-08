@@ -1,0 +1,9 @@
+loadrt Stats
+addf Stats servo-thread
+
+net Torch	=>	Stats.Torch 
+net arc_ok	=>	Stats.ArcOK 
+net PrgRUN	=>	Stats.PrgRUN
+net torch-curr-vel	 =>  Stats.current-velocity
+net PierceCount motion.digital-out-00 => Stats.DI
+net ProbeTime motion.digital-out-01 => Stats.DIprobeTime
