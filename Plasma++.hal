@@ -40,7 +40,6 @@ net spindle-cmd-rps-abs <= spindle.0.speed-out-rps-abs
 net spindle-at-speed    => spindle.0.at-speed
 
 
-net estop-out       => parport.0.pin-01-out
 net xstep           => parport.0.pin-02-out
 setp parport.0.pin-02-out-reset 1
 net xdir            => parport.0.pin-03-out
@@ -54,9 +53,6 @@ net zdir            => parport.0.pin-07-out
 net astep           => parport.0.pin-08-out
 setp parport.0.pin-08-out-reset 1
 net adir            => parport.0.pin-09-out
-#net spindle-cw      => parport.0.pin-14-out
-#net spindle-pwm     => parport.0.pin-16-out
-#net xenable         => parport.0.pin-17-out
 net probe-in        <= parport.0.pin-10-in
 
 net Torch or2.0.out => parport.0.pin-17-out 

@@ -18,6 +18,8 @@ pin out bit out3 = false;
 pin out bit out4 = false;
 pin out bit out5 = false;
 pin out bit out6 = false;
+pin out bit out7 = false;
+pin out bit out8 = false;
 
 //param rw float Xmax = 3000;	
 //param rw float Ymax = 2000;
@@ -34,15 +36,20 @@ license "GPL";
 FUNCTION(_)
 {
 	
-Xsection_size = Xmax / 3;	
+Xsection_size = Xmax / 4;	
 Ysection_size = Ymax / 2;
 if (PrgON){
-if (Xcmd >= 0 && Xcmd < Xsection_size && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=true;out2=false;out3=false;out4=false;out5=false;out6=false;}else{out1=false;}
-if (Xcmd >= Xsection_size && Xcmd < Xsection_size*2 && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=false;out2=true;out3=false;out4=false;out5=false;out6=false;}else{out2=false;}
-if (Xcmd > Xsection_size*2 && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=false;out2=false;out3=true;out4=false;out5=false;out6=false;}else{out3=false;}
-if (Xcmd >= 0 && Xcmd < Xsection_size && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=true;out5=false;out6=false;}else{out4=false;}
-if (Xcmd >= Xsection_size && Xcmd < Xsection_size*2 && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=true;out6=false;}else{out5=false;}
-if (Xcmd > Xsection_size*2 && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=false;out6=true;}else{out6=false;}
-} else {out1=false;out2=false;out3=false;out4=false;out5=false;out6=false;}
+	
+if (Xcmd >= 0 && Xcmd < Xsection_size && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=true;out2=false;out3=false;out4=false;out5=false;out6=false;out7=false;out8=false;}else{out1=false;}
+if (Xcmd >= Xsection_size && Xcmd < Xsection_size*2 && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=false;out2=true;out3=false;out4=false;out5=false;out6=false;out7=false;out8=false;}else{out2=false;}
+if (Xcmd > Xsection_size*2 && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=false;out2=false;out3=true;out4=false;out5=false;out6=false;out7=false;out8=false;}else{out3=false;}
+if (Xcmd > Xsection_size*3 && Ycmd >= 0 && Ycmd < Ysection_size ){ out1=false;out2=false;out3=false;out4=true;out5=false;out6=false;out7=false;out8=false;}else{out4=false;}
+
+if (Xcmd >= 0 && Xcmd < Xsection_size && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=true;out6=false;out7=false;out8=false;}else{out5=false;}
+if (Xcmd >= Xsection_size && Xcmd < Xsection_size*2 && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=false;out6=true;out7=false;out8=false;}else{out6=false;}
+if (Xcmd > Xsection_size*2 && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=false;out6=false;out7=true;out8=false;}else{out7=false;}
+if (Xcmd > Xsection_size*3 && Ycmd > Ysection_size ){ out1=false;out2=false;out3=false;out4=false;out5=false;out6=false;out7=false;out8=true;}else{out8=false;}
+
+} else {out1=false;out2=false;out3=false;out4=false;out5=false;out6=false;out7=false;out8=false;}
 
 }

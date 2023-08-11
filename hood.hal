@@ -9,7 +9,10 @@ net out2 hood.out2 parport.1.pin-02-out
 net out3 hood.out3 parport.1.pin-03-out
 net out4 hood.out4 parport.1.pin-04-out
 net out5 hood.out5 parport.1.pin-05-out	
-net out6 hood.out6 parport.1.pin-06-out 	
+net out6 hood.out6 parport.1.pin-06-out 
+net out7 hood.out7 parport.0.pin-16-out	
+net out8 hood.out8 parport.0.pin-01-out 	
+
 net PrgRUN hood.PrgON halui.program.is-running 
 
 
