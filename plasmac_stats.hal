@@ -1,9 +1,0 @@
-# Панель статистики
-net plasmac:cut-length			Stats.cut-length		=>	plasmac_stats.cut-length
-net plasmac:cut-time			Stats.cut-time			=>	plasmac_stats.cut-time
-net plasmac:state				Stats.state-out			=>	plasmac_stats.state
-net plasmac:pierce-count		Stats.pierce-count		=>	plasmac_stats.pierce-count
-net plasmac:motion-type			motion.motion-type		=>	plasmac_stats.motion-type
-net plasmac:program-is-idle		halui.program.is-idle	=>	plasmac_stats.program-is-idle
-net PrgRUN												=>  plasmac_stats.program-is-running
-net spindle-on											=>	plasmac_stats.torch-on
