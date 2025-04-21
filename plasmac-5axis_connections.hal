@@ -1,0 +1,43 @@
+# Keep your plasmac i/o connections here to prevent them from
+# being overwritten by updates or pncconf/stepconf changes
+
+# Other customisations may be placed here as well
+# This file is built by the configurator in your configuration directory
+
+#***** DEBOUNCE FOR THE INPUTS *****
+loadrt dbounce names=db_breakaway,db_float,db_ohmic,db_arc-ok
+addf db_float     servo-thread
+addf db_ohmic     servo-thread
+addf db_breakaway servo-thread
+addf db_arc-ok    servo-thread
+# for the float and ohmic inputs
+# each increment in delay is a 0.001mm (0.00004") increase in any probed height result
+setp db_float.delay     5
+setp db_ohmic.delay     5
+setp db_breakaway.delay 5
+setp db_arc-ok.delay    5
+
+#***** ARC VOLTAGE LOWPASS FILTER *****
+# set the cutoff frequency if required
+setp plasmac.lowpass-frequency 0
+
+#***** THE JOINT ASSOCIATED WITH THE Z AXIS *****
+net plasmac:axis-position joint.2.pos-fb => plasmac.axis-z-position
+
+#***** PLASMA CONNECTIONS *****
+net plasmac:arc-ok-in parport.0.pin-11-in-not => db_arc-ok.in
+net plasmac:float-switch parport.0.pin-10-in => db_float.in
+# net plasmac:breakaway {YOUR BREAKAWAY PIN} => db_breakaway.in
+# net plasmac:ohmic-probe {YOUR OHMIC PROBE PIN} => db_ohmic.in
+# net plasmac:ohmic-enable plasmac.ohmic-enable  => {YOUR OHMIC ENABLE PIN}
+net plasmac:torch-on => parport.0.pin-17-out
+net plasmac:move-up parport.0.pin-12-in-not => plasmac.move-up
+net plasmac:move-down parport.0.pin-13-in-not => plasmac.move-down
+
+#***** MULTIPLE TOOL ENABLE *****
+# set to 1 to enable a scribe or spotting
+setp plasmac.multi-tool 0
+
+#***** SCRIBE CONNECTIONS *****
+# net plasmac:scribe-arm plasmac.scribe-arm => ***YOUR_SCRIBE_ARMING_OUTPUT***
+# net plasmac:scribe-on  plasmac.scribe-on  => ***YOUR_SCRIBE_ON_OUTPUT***

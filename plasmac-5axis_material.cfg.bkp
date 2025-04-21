@@ -1,0 +1,86 @@
+# plasmac material file
+# example only, may be deleted
+# items marked * are mandatory
+# other items are optional and will default to 0
+
+
+[MATERIAL_NUMBER_3]  
+NAME               = stal 3 mm
+KERF_WIDTH         = 1.5
+THC                = 1
+PIERCE_HEIGHT      = 5.0
+PIERCE_DELAY       = 0.1
+PUDDLE_JUMP_HEIGHT = 0.0
+PUDDLE_JUMP_DELAY  = 2.42861286637e-17
+CUT_HEIGHT         = 1.5
+CUT_SPEED          = 2000.0
+CUT_AMPS           = 45.0
+CUT_VOLTS          = 122.0
+PAUSE_AT_END       = 0.0
+GAS_PRESSURE       = 0.0
+CUT_MODE           = 1.0
+
+[MATERIAL_NUMBER_4]  
+NAME               = stal 4 mm
+KERF_WIDTH         = 1.5
+THC                = 1
+PIERCE_HEIGHT      = 5.0
+PIERCE_DELAY       = 0.1
+PUDDLE_JUMP_HEIGHT = 0.0
+PUDDLE_JUMP_DELAY  = 2.42861286637e-17
+CUT_HEIGHT         = 1.5
+CUT_SPEED          = 2500.0
+CUT_AMPS           = 45.0
+CUT_VOLTS          = 122.0
+PAUSE_AT_END       = 0.0
+GAS_PRESSURE       = 0.0
+CUT_MODE           = 1.0
+
+[MATERIAL_NUMBER_1]  
+NAME               = stal 1 mm
+KERF_WIDTH         = 1.5
+THC                = 1
+PIERCE_HEIGHT      = 5.0
+PIERCE_DELAY       = 0.4
+PUDDLE_JUMP_HEIGHT = 0.0
+PUDDLE_JUMP_DELAY  = 2.42861286637e-17
+CUT_HEIGHT         = 1.5
+CUT_SPEED          = 2000.0
+CUT_AMPS           = 45.0
+CUT_VOLTS          = 122.0
+PAUSE_AT_END       = 0.0
+GAS_PRESSURE       = 0.0
+CUT_MODE           = 1.0
+
+[MATERIAL_NUMBER_2]  
+NAME               = stal 2 mm
+KERF_WIDTH         = 1.5
+THC                = 1
+PIERCE_HEIGHT      = 5.0
+PIERCE_DELAY       = 0.1
+PUDDLE_JUMP_HEIGHT = 0.0
+PUDDLE_JUMP_DELAY  = 2.42861286637e-17
+CUT_HEIGHT         = 1.5
+CUT_SPEED          = 2000.0
+CUT_AMPS           = 45.0
+CUT_VOLTS          = 122.0
+PAUSE_AT_END       = 0.0
+GAS_PRESSURE       = 0.0
+CUT_MODE           = 1.0
+
+[MATERIAL_NUMBER_5]  
+NAME               = stal 5 mm
+KERF_WIDTH         = 1.5
+THC                = 1
+PIERCE_HEIGHT      = 5.0
+PIERCE_DELAY       = 0.1
+PUDDLE_JUMP_HEIGHT = 0.0
+PUDDLE_JUMP_DELAY  = 2.42861286637e-17
+CUT_HEIGHT         = 1.5
+CUT_SPEED          = 2000.0
+CUT_AMPS           = 45.0
+CUT_VOLTS          = 122.0
+PAUSE_AT_END       = 0.0
+GAS_PRESSURE       = 0.0
+CUT_MODE           = 1.0
+
